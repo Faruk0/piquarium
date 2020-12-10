@@ -1,7 +1,6 @@
 import os
-from w1thermsensor import *
 import RPi.GPIO as GPIO
-import time
+from w1thermsensor import W1ThermSensor
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
@@ -15,7 +14,6 @@ tempmin = 24
 tempmax = 26
 phmin = 8
 phmax = 8.4
-
 
 if __name__ == '__main__':
     GPIO.setmode(GPIO.BCM)
