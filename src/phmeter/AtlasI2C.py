@@ -128,9 +128,9 @@ class AtlasI2C:
             return self._module + " " + str(self.address) + " " + self._name
         
     def read(self, num_of_bytes=31):
-        '''
+        """
         reads a specified number of bytes from I2C, then parses and displays the result
-        '''
+        """
         
         raw_data = self.file_read.read(num_of_bytes)
         response = self.get_response(raw_data=raw_data)
@@ -156,10 +156,10 @@ class AtlasI2C:
         return timeout
 
     def query(self, command):
-        '''
-        write a command to the board, wait the correct timeout, 
+        """
+        write a command to the board, wait the correct timeout,
         and read the response
-        '''
+        """
         self.write(command)
         current_timeout = self.get_command_timeout(command=command)
         if not current_timeout:
@@ -173,9 +173,9 @@ class AtlasI2C:
         self.file_write.close()
 
     def list_i2c_devices(self):
-        '''
+        """
         save the current address so we can restore it after
-        '''
+        """
         prev_addr = copy.deepcopy(self._address)
         i2c_devices = []
         for i in range(0, 128):
