@@ -9,13 +9,13 @@ os.system('modprobe w1-therm')
 
 calibration = ""
 
-tempg = 17
+tempg = 4
 tempr = 27
-tempb = 4
+tempb = 17
 
-phg = 22
-phr = 23
-phb = 11
+phg = 13
+phr = 26
+phb = 19
 
 tempmin = 24
 tempmax = 26
