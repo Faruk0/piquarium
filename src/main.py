@@ -29,7 +29,7 @@ phmin = 8
 phmax = 8.4
 
 
-def send_alert(sonde, niveau)
+def send_alert(sonde, niveau):
     receiver_email = aquariophile  
     sender_email = "w.world2345@laposte.net" 
     password = 'Annecy2019!'
@@ -46,7 +46,7 @@ def send_alert(sonde, niveau)
     mailserver.ehlo()
     mailserver.login(sender_email, password)
     try:
-       di = mailserver.sendmail(sender_email, e, msg.as_string())
+       di = mailserver.sendmail(sender_email, msg.as_string())
        print(di)
     except:
        print('mail not sent')
